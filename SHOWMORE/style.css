@@ -1,0 +1,29 @@
+
+    .content
+    {
+        text-align: justify;
+        border: 5px;
+        margin: auto;
+        max-width: 600px;
+        background-color: aqua;
+        color: black;
+    }
+    .spanmore{
+        display: none;
+    }
+    .showmore{
+        
+        background-color: chocolate;
+        color: crimson;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        padding: 15px 50PX;
+        margin: 5PX 300PX 200PX 300PX;
+        font-size: 12PX;
+
+        
+    }
+    .content.tub .spanmore{
+        display: inline;
+    }
