@@ -1,0 +1,32 @@
+body{
+    font-family: 'montserrat';
+    text-align: justify;
+    max-width: 500px;
+    margin: auto;
+    background-color: black;
+    color: chartreuse;
+}
+.text{
+    font-size: 24px;
+
+}
+.spanmoretext{
+    display: none;
+}
+.buttonmore{
+    padding: 12px 50px;
+    background-color:darkturquoise;
+    color:blue;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    cursor: pointer;
+    
+}
+.text.spanmore .spanmoretext{
+    display: inline;
+}
+
+.text.spanmore .dots{
+    display: none;
+}
