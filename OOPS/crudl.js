@@ -158,6 +158,59 @@ function byupdate()
                });
                break           
            case "skill" :  
+                var pos = prompt("Tell us position to which skill to be updated : ")
+                if (pos<team.length)
+                {
+                    var ask=prompt("Tell us do u want to add or replace or remove or update : ")
+                    alert(team[pos].show())
+                    switch(ask)
+                    {
+                        case "add":
+                            var newadd=prompt("Tell us new SKILL to be added : ")
+                            team[pos].skill.push(newadd)
+                            alert(team[pos].show())
+                            break
+                        case "replace":
+                            var oldskill=prompt("Tell us old skill to be replaced : ")
+                            var newskill=prompt("Tell us new skill replaced by : ")
+                            team[pos].skill =team[pos].skill.filter((data,pos)=> {return data!==oldskill})
+                            team[pos].skill.push(newskill)
+                            alert(team[pos].show())
+
+                            break
+                        case "remove" :
+                             var removenam =prompt("Tell us person name for confirmation : ")
+                             alert(team[pos].show())
+                             var noremove = prompt("Tell us how many skillS to be removed : ")
+                             for(let i=0;i<noremove;i++)
+                             {
+                              var removeskill=prompt("Tell us skill to be removed :")
+                              team[pos].skill=team[pos].skill.filter((data,pos)=>{return data!==removeskill})
+                              alert(team[pos].show())                           
+                             } 
+                             break
+                        case  "update":   
+                              var updatename=prompt("Tell us person name for confirmation : ")
+                              alert(team[pos].show())
+                              for(let j=0;j<=team[pos].skill.length;j++)
+                              {
+                                  team[pos].skill.pop()
+                              }
+                              team[pos].skill.pop()
+                              alert(team[pos].show())
+                              var usno=prompt("Tell us how many skill u want to add :")
+                              for(let i=0;i<usno;i++)
+                              {
+                                  var sknam=prompt("Tell us Skill to be added : ")
+                                  team[pos].skill.push(sknam)
+                              }
+                              alert(team[pos].show())
+                              break;
+
+                        default:
+                            break
+                    }
+                }
                 break
            default:
               break
