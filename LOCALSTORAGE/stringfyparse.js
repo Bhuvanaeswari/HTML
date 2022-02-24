@@ -44,11 +44,17 @@ const viewing=()=>
 const removing=()=>
 {
     alert(localStorage.getItem("menu"))
-    var inp = document.getElementById("inpitem").value //give index value
-    
+    var inp = document.getElementById("inpitem").value //give item name
+
     console.log(inp)
     let tpar=JSON.parse(localStorage.getItem("menu"))
-    
+    var len=tpar["foods"].length
+    console.log(len)
+    for(i=0;i<len;i++)
+    {   console.log("hi")
+        if (tpar["foods"][i]==inp){break}
+    }
+    inp=i
     tpar["foods"]=tpar["foods"].filter((data,pos)=>{ return data!==tpar["foods"][inp]})
     
     
