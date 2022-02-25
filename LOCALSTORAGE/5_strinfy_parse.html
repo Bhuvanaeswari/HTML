@@ -18,9 +18,17 @@
             <button onclick="adding()" style="background-color: crimson;">ADD</button>
             <button onclick="viewing()" style="background-color: chartreuse;">VIEW</button>
             <button onclick="removing()" style="background-color: blue;">REMOVE</button> 
+            <button onclick ="btnclear()" style="background-color: darkslateblue;">CLEAR</button>
         </div>
         <div id="template"></div>
     </div>
-    
+  <script>
+    let btnclear=document.querySelector('.btnclear');
+    let inpclear=document.getElementById('inpitem');
+    btnclear.addEventListener('click',(e)=>{
+        {inpclear=>inpclear.value=''}
+    })
+
+  </script>  
 </body>
 </html>

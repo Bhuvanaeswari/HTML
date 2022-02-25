@@ -63,4 +63,10 @@ const removing=()=>
 
 }
 
+const btnclear=()=>
+{ 
+    document.getElementById("inpitem").value=""
+
+}
+
 //console.log(tpar["foods"][1])
