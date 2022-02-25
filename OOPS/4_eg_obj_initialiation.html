@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let adhar=new Object()
+        adhar.name="varshini"
+        adhar.age=30
+        adhar.address="opp seven arts college,hasthampati,salem-7"
+        alert(adhar.name+adhar.age+adhar.address)
+
+//////////////////////////////////////////////
+        let adhar2=new sector()
+        
+        function sector()
+        {
+            this.name="Rithika"
+            this.age=34
+            this.address="Gandhi road,salem"
+            alert(this.name+this.age+this.address)
+
+        }
+////////////////////////////////////////////////////////
+        let adhar3= new diffsector()
+        //alert(adhar3.display())
+        adhar3.display()
+        function diffsector()
+        {
+            this.name="yalini"
+            this.age=45
+            this.address="Alagapuram,salem"
+            this.display=forprinting
+
+        }
+        function forprinting()
+        {
+            with(this)
+            {
+                //return(name+age+address)
+                alert(name+age+address)
+
+            }
+        }
+    ////////////////////////////////////////////////////////    
+    let adhar4=new parasector("varun",34,"Vivekanada street")
+    alert(adhar4.viewing())
+    function parasector(n,a,ad)
+    {
+        this.name=n
+        this.age=a
+        this.address=ad
+        this.viewing=forview
+
+    }
+    function forview()
+    {
+        with(this)
+        {
+            return(name+age+address)
+        }
+    
+    }
+    </script>
+    
+</body>
+</html>

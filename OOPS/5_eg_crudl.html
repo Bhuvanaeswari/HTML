@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let adhar=new sector("kavini","34","vivekanda street")
+        alert(adhar.view())
+        let  sample=new superior()
+        var data1= new sector("Thruv","23","Brindhavan street salem")
+        sample.adding(data1)
+        sample.adding(adhar)
+        sample.listing()
+        function sector(n,a,ad)
+        {
+            this.name=n
+            this.age=a
+            this.address=ad
+            this.view=view
+
+        }
+
+        function view()
+        {
+            with(this)
+            {
+                return name+" "+age+" "+address
+            }
+
+        }
+        
+        function superior()
+        {
+            this.team=new Array()
+            this.listing=listview
+            this.adding=adding
+        }
+       
+        function listview()
+        {
+            with(this)
+            {
+                team.map((obj)=>{alert(obj.view())})
+            }
+        }
+        function adding(arg)
+        {
+            with(this)
+            {
+                team.push(arg)
+                alert(arg.name+"has added")
+            }
+
+
+        }
+    </script>
+    
+</body>
+</html>
