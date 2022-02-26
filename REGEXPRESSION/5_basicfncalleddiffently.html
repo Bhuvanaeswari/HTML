@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div align="center">
+    <input type="text" id="inpname" placeholder="enter ur name..."/>
+    <button id="namebtn">NAMEVALIDATE</button>
+    <output id="out1"></output></div>
+    <div align="center"><input type="text" id="inpmobile" placeholder="enter ur mobile number.."/>
+    <button id="mobilebtn" >MOBILEVALIDATE</button>
+    <output id="out2"></output></div>
+    <div align="center"><input type="text" id="inppin" placeholder="enter ur pin number..."/>
+    <button id="pinbtn" >PINVALIDATE</button>
+    <output id="out3"></output></div>
+
+    <script type="text/javascript">
+        namebtn.onclick=function()
+        {
+          const inpname=document.getElementById("inpname").value
+          let rg1=new RegExp("[a-zA-Z]+$",'g')
+          document.getElementById("out1").value=rg1.test(inpname)
+
+        }
+        mobilebtn.onclick=function()
+        {
+            const inpmobile=document.getElementById("inpmobile").value
+            let rg2=new RegExp("^[0-9]+$",'g')
+            document.getElementById("out2").value=rg2.test(inpmobile)
+
+        }
+        pinbtn.onclick=()=>
+        {
+            const inppin=document.getElementById("inppin").value
+            let rg3=new RegExp("^[0-9]+$",'g')
+            document.getElementById("out3").value=rg3.test(inppin)
+
+
+        }
+
+    </script>
+</body>
+</html>

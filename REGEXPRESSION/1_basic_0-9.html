@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inptype" placeholder="enter username"/>
+    <button onclick="callfn()">VALIDATE</button>
+    <output id="you"></output>
+
+    <script type="text/javascript">
+        
+        const callfn=()=>
+        {
+            const inptype=document.getElementById("inptype").value
+            let reg=new RegExp ("[0-9]",'g') // compulsory 0-9 should be there inaddition to this any char can be added
+            //let reg=new RegExp("[^0-9]",'g') //only 0-9 sholudnot be there
+            //let reg=new RegExp("^[0-9]",'g')
+            document.getElementById("you").value=reg.test(inptype)
+
+        }
+
+    </script>
+    
+</body>
+</html>
