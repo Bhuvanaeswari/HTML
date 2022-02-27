@@ -17,6 +17,13 @@
     <div align="center"><input type="text" id="inppin" placeholder="enter ur pin number..."/>
     <button id="pinbtn" onclick="fn3()">PINVALIDATE</button>
     <output id="out3"></output></div>
+    <h2>password must be 7 char <br/> Atleast one number<br/> One small case <br/> Atleast one upper case <br/>Atledt one special char & not allowed ~,`,*<br/></h2>
+    <div align="center"><input type="text" id="inppass"  placeholder="enter ur password..."/>
+    <button id="passbtn" onclick="fn4()">PASSVALIDATE</button>
+    <p id="out4"></p></div>
+    <div align="center"><input type="password" id="inppassword" size="7" maxlength="7"  placeholder="enter ur password..."/>
+        <button id="passwordbtn" onclick="fn5()">PASSVALIDATE</button>
+        <p id="out5"></p></div>
 
     <script type="text/javascript">
         const fn1=()=>
@@ -41,7 +48,86 @@
 
 
         }
+        const fn4=()=>
+        { let ack=true
+            const inppass=document.getElementById("inppass").value
+            if (inppass.length<7)
+            {
+                alert(inppass.length)
+                document.getElementById("out4").innerHTML ="password length must be 7 char"
+                return("too short")
+               
+                        
+            }
+            else if(inppass.search(/[0-9]/) == -1)
+            {
+                document.getElementById("out4").innerHTML="Numeric value must be enter "
+                return("no_number")
 
+            }
+            else if (inppass.search(/[a-z]/)== -1)
+            {
+                document.getElementById("out4").innerHTML="lowercase must be enter"
+                return("no_lowercase")
+                
+            }
+            else if(inppass.search(/[A-Z]/)==-1)
+             {
+                 document.getElementById("out4"). innerHTML="Uppercase must be enter"
+                 return("no_uppercase")
+             }
+             else if(inppass.search(/[\@\#\$\%\^\&\(\)\_\.\,\;\:]/)==-1)
+             {
+                 document.getElementById("out4"). innerHTML="special char must be enter [~,`,*] are not allowed"
+                 return("no_specialchar")
+                }
+
+             document.getElementById("out4").innerHTML="successful !  "
+
+           // let rg4=new RegExp(("^(?=.*[0-9])(?=.*[$#@!*])[A-Za-z0-9@$#!*]",'g'))
+            //document.getElementById("out4").value=rg4.test(inppass)
+        }
+
+        const fn5=()=>
+        { let ack=true
+            const inppassword=document.getElementById("inppassword").value
+            if (inppassword.length<7)
+            {
+                
+                document.getElementById("out5").innerHTML ="password length must be 7 char"
+                return("too short")
+               
+                        
+            }
+            else if(inppassword.search(/[0-9]/) == -1)
+            {
+                document.getElementById("out5").innerHTML="Numeric value must be enter "
+                return("no_number")
+
+            }
+            else if (inppassword.search(/[a-z]/)== -1)
+            {
+                document.getElementById("out5").innerHTML="lowercase must be enter"
+                return("no_lowercase")
+                
+            }
+            else if(inppassword.search(/[A-Z]/)==-1)
+             {
+                 document.getElementById("out5"). innerHTML="Uppercase must be enter"
+                 return("no_uppercase")
+             }
+             else if(inppassword.search(/[\@\#\$\%\^\&\(\)\_\.\,\;\:]/)==-1)
+             {
+                 document.getElementById("out5"). innerHTML="special char must be enter [~,`,*] are not allowed"
+                 return("no_specialchar")
+                }
+
+             document.getElementById("out5").innerHTML="successful !  "
+
+           // let rg4=new RegExp(("^(?=.*[0-9])(?=.*[$#@!*])[A-Za-z0-9@$#!*]",'g'))
+            //document.getElementById("out4").value=rg4.test(inppass)
+        }
     </script>
 </body>
 </html>
+<!-- {,7} -->

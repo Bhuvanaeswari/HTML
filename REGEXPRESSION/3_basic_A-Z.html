@@ -21,7 +21,8 @@
             // let reg=new RegExp("^[A-Z]",'g')
             //let reg=new RegExp("[A-Za-z]",'g')
             //let reg=new RegExp("[^A-Za-z]",'g')
-            let reg=new RegExp("^[A-Za-z]",'g')
+            //let reg=new RegExp("^[A-Za-z]",'g')
+            let reg=new RegExp("^[A-Za-z]+$",'g')//ONLY STRING WILL BE OUTPUT
             document.getElementById("you").value=reg.test(inptype)
 
         }

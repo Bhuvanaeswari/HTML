@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM USING TABLE ELEMENT</title>
+    <script src="..//REGEXPRESSION/form2.js"></script>
+    <style type="text/css">
+        span
+           {
+               color: red;
+           }
+    </style>
+    </head>
+<body>
+    <!--  <H2 align="center"> SUBMISSION FORM</H2>-->
+    <form  name="valley" onsubmit=" return perform()" action="#">
+        
+        <table align="center">
+            <tbody>
+                <tr>
+                <td><p>FIRST NAME<span id="ferror"></span></p>  </td>
+                <td><input type="text" name="fname"  placeholder="firstname"></td>
+                <td><p>LAST NAME<span id="lerror"></span></p></td>
+                <td><input type="text" name="lname" placeholder="lastname"></td>
+                </tr>
+                <tr>
+                    <td> <P>   SELECT DATE OF BIRTH<SPan id="doberror"></SPan></p></td>
+                    <td><input type="Date" name="dat"  placeholder="select dob"></td>
+                </tr>
+                <tr>
+                    <td> <P> SELECT GENDER<SPan id="gerror"></SPan></p></td>
+                    <td><input type="radio" name="gender" value="male"> MALE</td>
+                    <td><input type="radio" name="gender" value="female">FEMALE</td>
+                    <td><input type="radio" name="gender" value="others">OTHERS</td>
+                </tr>
+                <tr>
+                    <td> <P> CHOOSE PASSWORD<SPan id="perror"></SPan></p></td>
+                    <td><input type="text" name="pass" size="7" maxlength="7"></td>
+                </tr>
+                <tr>
+                    <td> <P> ADDITIONALS<SPan id="adderror"></SPan></p> </td>
+                    <td><input type="checkbox" name="c1" value="c1">NEWS</td>
+                    <td><input type="checkbox" name="c2" value="c2">FUTURE UPDATES</td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="send"></td>
+                    <td><input type="reset" value="clear"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    </body>
+</html>

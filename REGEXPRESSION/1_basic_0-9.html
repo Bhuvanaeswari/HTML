@@ -16,9 +16,10 @@
         const callfn=()=>
         {
             const inptype=document.getElementById("inptype").value
-            let reg=new RegExp ("[0-9]",'g') // compulsory 0-9 should be there inaddition to this any char can be added
+            //let reg=new RegExp ("[0-9]",'g') // compulsory 0-9 should be there inaddition to this any char can be added
             //let reg=new RegExp("[^0-9]",'g') //only 0-9 sholudnot be there
             //let reg=new RegExp("^[0-9]",'g')
+            let reg=new RegExp("^[0-9]+$",'g')//ONLY NUMBERS WILL BE OUTPUT
             document.getElementById("you").value=reg.test(inptype)
 
         }

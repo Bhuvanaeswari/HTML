@@ -17,13 +17,20 @@
     <div align="center"><input type="text" id="inppin" placeholder="enter ur pin number..."/>
     <button id="pinbtn" onclick="fn3()">PINVALIDATE</button>
     <output id="out3"></output></div>
+    <div></div>
+    <div align="center"><input type="text" id="inppass" placeholder="enter ur password..."/>
+        <button id="passbtn" onclick="fn4()">PASSVALIDATE</button>
+        <output id="out4"></output></div>
+    <div align="center"><input type="password" id="inppassword" size="7" maxlength="7"   placeholder="enter ur password..."/>
+    <button id="passwordbtn" onclick="fn5()">PASSVALIDATE</button>
+    <output id="out5"></output></div>    
+    
 
     <script type="text/javascript">
         const fn1=()=>
         {
           const inpname=document.getElementById("inpname").value
           document.getElementById("out1").value= (/[a-zA-Z]+$/).test(inpname)
-
         }
         const fn2=()=>
         {
@@ -38,7 +45,17 @@
 
 
         }
+        const fn4=()=>
+        {
+            const inppass=document.getElementById("inppass").value
+            document.getElementById("out4").value=(/^(?=.*[0-9])(?=.*[@#$%^&*()<>,./])([a-zA-Z0-9@#$5^&*()<>,./]+$)/).test(inppass)
+        }
 
+        const fn5=()=>
+        {
+            const inppassword=document.getElementById("inppassword").value
+            document.getElementById("out5").value=(/^(?=.*[0-9])(?=.*[@#$%^&*()<>,./])([a-zA-Z0-9@#$5^&*()<>,./]+$)/).test(inppassword)
+        }
     </script>
 </body>
 </html>
