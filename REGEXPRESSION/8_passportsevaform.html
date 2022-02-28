@@ -5,21 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../REGEXPRESSION/passportseva8.js"></script>
+    <style type="text/css">
+     span
+        {
+            color: red;
+        }
+    </style>
    
 </head>
 <body>
     <h2 align="center">PASSPORT SEVA USER REGISTRATION FORM</h2>
-    <form action="">
+    <form name="passportseva" onsubmit="return perform()" action="#">
         <table align="center">
-            <tr><td>Register to apply at *</td>
+            <tr><td>  <p> Register to apply at <span style ="color: red;">*</span> </span></span><span id ="rerror"></span></p></td>
                 <td></td><td></td>
-                <td><input type="radio" name="register" value="CPV Delhi">CPV Delhi </td>
+                <td><input type="radio" name="register" value="CPV Delhi" >CPV Delhi </td>
                 <!-- <td><font size="2px">Select the 'CPV Delhi' option to apply for Diplomatic/Official<br/> </font></td> -->
             </tr>
             <td></td><td></td><td></td>
-             <td><input type="radio" name="register" value="Passport Office">Passport Office</td>
+             <td><input type="radio" name="register" value="Passport Office" checked > Passport Office</td>
              <td><font size="2px">Select the 'CPV Delhi' option to apply for Diplomatic/Official<br/>passport at Consular, Passport and Visa (CPV) division, Delhi</font></td>
-            <tr><td>Passport Office*<br/><font size="2px">(As Per Present Residential Address)</font> </td>
+            <tr><td>  Passport Office<span style ="color: red;">*</span> <span id="perror" ></span> <br/><font size="2px">(As Per Present Residential Address)</font> </td>
                 <td></td><td></td>
                 <td>
                 <select name="location" id="location">
@@ -33,52 +40,52 @@
             <tr>
                 <td></td><td></td><td></td>
             </tr>
-            <tr><td>Given Name <font size="2px">(Max 45 characters)*</font></td>
+            <tr><td> Given Name <font size="2px">(Max 45 characters)<span style ="color: red;">*</span></font><span id="gerror"></span> </td>
             <td></td><td></td>
             <td> <input type="text" name="inpname"></td>
             <td><font size="2px"><b>First Name + Middle Name</b><br/>Initials and honorifics (e.g. Dr.,Col.,etc.) are not allowed</font></td>
             </tr>
             <tr>
-                <td> Sur Name <font size="2px">(Max 45 characters)*</font></td>
+                <td>  Sur Name <font size="2px">(Max 45 characters)<span style ="color: red;">*</span></font> <span id="serror"></span>    </td>
                 <td></td><td></td>
                 <td><input type="text" name="surname"></td>
             </tr>
             <tr>
-                <td>Date Of Birth <font size="3px">(DD/MM/YYYY)*</font></td>
+                <td>   Date Of Birth <font size="3px">(DD/MM/YYYY)<span style ="color: red;">*</span></font> <span id="doberror"></span>   </td>
                 <td></td><td></td>
                 <td><input type="date" name="dob"></td>
             </tr>
             <tr>
-                <td>E-mail ID <font size="2px">(Max 35 characters)*</font></td>
+                <td> E-mail ID <font size="2px">(Max 35 characters)<span style ="color: red;">*</span></font><span id="emailerror"></span>   </td>
                 <td></td><td></td>
                 <td><input type="text" name="email"></td>
             </tr>
             <tr>
-                <td>Do you want your Login ID<br/> &nbsp;to be same as E-mail ID &nbsp;&nbsp;&nbsp;&nbsp; </td>
+                <td> Do you want your Login ID<br/> &nbsp;to be same as E-mail ID &nbsp;&nbsp;&nbsp;&nbsp; <span id="doyouerror"></span>   </td>
          
                 <td></td><td></td>
                 <td ><input type="radio" name="yesno" value="YES">YES
-                   <input type="radio" name="yesnono" value="NO">NO</td>
+                   <input type="radio" name="yesno" value="NO">NO</td>
             </tr>
             <tr>
-                <td>Login Id*</td>
+                <td>  Login Id<span style ="color: red;">*</span> <span id="loginerror"></span>  </td>
                 <td></td><td></td>
                 <td><input type="text" name="loginid"></td>
                 <td> <a href="#"> Check Availability</a></td>
             </tr>
             <tr>
-                <td>Password*</td>
+                <td>   Password<span style ="color: red;">*</span> <span id="passworderror"></span>   </td>
                 <td></td><td></td>
-                <td><input type="text" name="password"></td>
+                <td><input type="text" name="passwordid"></td>
                 <td><a href="#">Passport Policy</a></td>
             </tr>
             <tr>
-                <td>Confirm Password*</td>
+                <td>   Confirm Password<span style ="color: red;">*</span> <span id="cperror"></span>   </td>
                 <td><td></td></td>
                 <td><input type="text" name="cpassword"></td>
             </tr>
             <tr>
-                <td>Hint Question*</td>
+                <td>   Hint Question<span style ="color: red;">*</span> <span id="hinterror"></span>   </td>
                 <td></td><td></td>
                 <td><select name="hint" id="hint">
                     <option >-----select-----</option>
@@ -89,17 +96,17 @@
                 </select></td>
             </tr>
             <tr>
-                <td>Hint Answer*</td>
+                <td>   Hint Answer<span style ="color: red;">*</span> <span id="hintanserror"></span>   </td>
                 <td></td><td></td>
                 <td><input type="text" name="hintans"></td>
             </tr>
             <tr>
-                <td>Enter Characters Displayed*</td>
+                <td>   Enter Characters Displayed<span style ="color: red;">*</span> <span id="entererror"></span>   </td>
                 <td></td><td></td>
-                <td><textarea name="enter" id="enter" cols="25" rows="4"></textarea></td>
+                <td><textarea name="enter" id="enter" cols="20" rows="3">ERtcP</textarea></td>
             </tr>
             <tr>
-                <td></td><td></td><td></td>
+                <td></td><td></td><td>   <span id="caperror"></span>   </td>
                 <td><input type="text" name="empty"></td>
             </tr>
             <tr>
