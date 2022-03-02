@@ -184,7 +184,8 @@ function byupdate()
                              var noremove = prompt("Tell us how many skillS to be removed : ")
                              for(let i=0;i<noremove;i++)
                              {
-                              var removeskill=prompt("Tell us skill to be removed :")
+               
+                                var removeskill=prompt("Tell us skill to be removed :")
                               team[pos].skill=team[pos].skill.filter((data,pos)=>{return data!==removeskill})
                               alert(team[pos].show())                           
                              } 
