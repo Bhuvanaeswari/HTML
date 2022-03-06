@@ -36,17 +36,10 @@
         function superior()
         {
             this.team=new Array()
-            this.listing=listview
             this.adding=adding
+            this.listing=listview
         }
-       
-        function listview()
-        {
-            with(this)
-            {
-                team.map((obj)=>{alert(obj.view())})
-            }
-        }
+              
         function adding(arg)
         {
             with(this)
@@ -56,6 +49,13 @@
             }
 
 
+        }
+        function listview()
+        {
+            with(this)
+            {
+                team.map((obj)=>{alert(obj.view())})
+            }
         }
     </script>
     
