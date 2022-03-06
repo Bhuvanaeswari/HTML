@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Extraction</title>
+    <script src="../JAVASCRIPT/SCRIPT/block.js">
+        function hey()
+        {
+            let y=document.getElementsByTagName("p")
+            alert(y[0].innerHTML)
+            alert(y[0].className)
+            alert(y[0].id)
+            y[0].innerHTML="Foundry for techie hungers"
+        }
+        function yet()
+        {
+            const wind=document.getElementsByName("sigma")[0]
+            alert(wind.value)
+            alert(wind.id)
+            alert(wind.placeholder)
+            alert(wind.type)
+            alert(wind.name)
+            wind.value="Razak Mohamed S"
+        }
+    </script>
+</head>
+<body>
+    <h2 ondblclick="alert(raj())">Vijay's favourite places</h2>
+    <ol type="A" class="alpha" ondblclick="vj()">
+        <li id="cosmo">Five roads</li>
+        <li onmouseenter="vijay(document.getElementById('cosmo').innerHTML)">Sona College</li>
+        <li onclick="alert(hybrid(12,89))">Mettur Park</li>
+        <li>Yercaud</li>
+    </ol>
+    <p class="hello" id="where" onmouseenter="hey()">Zealous Tech Corp</p>
+    <input type="text" name="sigma" id="delta" placeholder="Enter car model" onchange="yet()"/>
+    <button onmouseleave="uma()" onclick="manoj(document.getElementById('cosmo').innerHTML,98,document.getElementById('delta').value)">
+        Hamsaraj
+    </button>
+</body>
+</html>

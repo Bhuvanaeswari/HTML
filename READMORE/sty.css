@@ -23,7 +23,9 @@ body{
     cursor: pointer;
     
 }
-.text.spanmore .spanmoretext{
+
+
+.text.spanmore .spanmoretext{ 
     display: inline;
 }
 

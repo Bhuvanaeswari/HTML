@@ -1,0 +1,1071 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Service Network</title>
+	<meta name="author" content="Honda Power" />
+	<meta name="description" content="Demo" />
+	<meta name="keywords"  content="Demo" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	
+	<link rel="icon" type="image/png" href="https://www.hondaindiapower.com//front/media/favicon/favicon.jpg">
+	
+	<link rel="stylesheet" href="https://www.hondaindiapower.com/front/css/jquery.bxslider.min.css">
+	<link rel="stylesheet" href="https://www.hondaindiapower.com/front/css/fresco.css">
+	<link rel="stylesheet" href="https://www.hondaindiapower.com/front/css/slick.css">
+	<link rel="stylesheet" href="https://www.hondaindiapower.com/front/css/style.css?v=2">
+	<link rel="stylesheet" href="https://www.hondaindiapower.com/front/css/responsive.css?v=2">
+	<link rel="stylesheet" href="https://www.hondaindiapower.com/front/css/jquery.fancybox.css">
+	<script src="https://www.hondaindiapower.com/front/js/jquery-3.2.1.min.js"></script>
+	<script src="https://www.hondaindiapower.com/front/js/jquery.bxslider.min.js"></script>
+	<script src="https://www.hondaindiapower.com/front/js/fresco.js"></script>
+	<script src="https://www.hondaindiapower.com/front/js/slick.min.js"></script>
+	<script src="https://www.hondaindiapower.com/front/js/pinterest_grid.js"></script>
+	<script src="https://www.hondaindiapower.com/front/js/jquery.fancybox.pack.js"></script>
+	<script src="https://www.hondaindiapower.com/front/js/jquery.form.js"></script>
+	<script src="https://www.hondaindiapower.com/front/js/custom.js"></script>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+	
+	<script>
+var emailRegex = new RegExp(/^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$/i);
+var regex = /^[a-zA-Z ]*$/;
+
+var  mobileRegex = /^[1-9]\d{9}$/;
+var  landlineRegex = /^[\d]{8,15}$/;
+var  digitRegex = /^[0-9]*$/;
+var  passwordRegex = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-z0-9!@#$%^&*()]{6,20}$/;
+
+
+
+function Remove(id) {
+	jQuery('#'+id).removeClass('error');
+    jQuery('#error_'+id).html('');
+}
+
+
+jQuery(document).ready(function(){
+	
+	$('.prq a').click(function(){
+		//alert();
+		jQuery.ajax({
+			type	: "POST",
+			url		: 'https://www.hondaindiapower.com/welcome/get_enquiries_popup_data',
+			success    : function(data){ //
+			 	$("body").addClass("overflow-hidden");
+		        $('#enquiry-popup').fadeIn();
+				$('body').css({overflow: 'hidden'});
+				$('.side-fixed').css({right: '17px'});
+				$('#enquiry-popup').html(data);
+				$('#form_type').val('Side Pop Up');
+			}
+		});
+		return false;
+	});
+
+	jQuery("#btn-sitesearch").click(function(){ //alert("");
+		var site_search				= jQuery("#site_search").val();
+		var error_msg =[];
+		//var count =0 ;	
+		if (site_search == "") {
+			jQuery('#site_search').addClass('error');
+			//jQuery('#error_site_search').html('Please enter something.');
+			error_msg[count] ="site_search";
+			return false;
+		}
+		
+	});
+
+	jQuery("#btn-sitesearch-mobile").click(function(){ //alert("");
+		var site_search				= jQuery("#site_search_mobile").val();
+		var error_msg =[];
+		//var count =0 ;	
+		if (site_search == "") {
+			jQuery('#site_search_mobile').addClass('error');
+			//jQuery('#error_site_search').html('Please enter something.');
+			error_msg[count] ="site_search";
+			return false;
+		}
+		
+	});
+	
+	
+	
+	
+	
+});
+
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116821454-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-116821454-1');
+</script>
+
+	
+</head>
+<body>
+<div class="enquiry-popup" id="enquiry-popup">
+	
+</div>
+<!-- enquiry -->
+
+<div class="side-fixed">
+	<ul>
+		<li class="dlr"><a href="https://www.hondaindiapower.com/service-network">Find dealer <span></span></a></li>
+		<li class="prq"><a href="javascript:void(0);">Product Enquiry <span></span></a></li>
+		<li class="srv"><a href="https://www.hondaindiapower.com/service-network">Service &amp; Support <span></span></a></li>
+	</ul>
+</div>
+
+<div class="mb-navigation">
+	<div class="pst-box">
+		<div class="abst-box">
+			<div class="header-search">
+				
+			<form method="get" id="frm-search" name="frm-search" action="https://www.hondaindiapower.com/search-results">
+				<input type="text" class="search " value="" name="site_search" id="site_search_mobile" onkeyup="return Remove('site_search');" placeholder="Search">
+				<div id="error_site_search" class="error"></div>
+				<button class="btn " id="btn-sitesearch_mobile" name="btn-sitesearch" type="submit"></button>
+			</form>				
+			</div>
+			<div class="mobile-no">
+				<a href="tel:1800112323">1800112323</a>
+			</div>
+			<div class="mb-list">
+				<ul>
+					<li><a href="https://www.hondaindiapower.com/">Home</a></li>
+					<li><a href="https://www.hondaindiapower.com/about-us">About Us</a>
+						<ul>
+							<li><a href="https://www.hondaindiapower.com/why-buy-a-honda">Why Buy A Honda</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:void(0)">Products</a>
+						<ul>
+													<li>
+								<a href="https://www.hondaindiapower.com/product-category/tillers">Tillers</a>
+																
+										<ul>
+																						<li><a href="https://www.hondaindiapower.com/product-detail/f300">F300</a></li>
+																						<li><a href="https://www.hondaindiapower.com/product-detail/fj500">FJ500</a></li>
+																						<li><a href="https://www.hondaindiapower.com/product-detail/fq650">FQ650</a></li>
+																					</ul>
+								
+																
+							</li>
+													<li>
+								<a href="https://www.hondaindiapower.com/product-category/brush-cutters">Brush Cutters</a>
+																
+										<ul>
+																						<li><a href="https://www.hondaindiapower.com/product-detail/umr435t-l2st"> UMR435T L2ST</a></li>
+																						<li><a href="https://www.hondaindiapower.com/product-detail/umr435t-ledt"> UMR435T LEDT</a></li>
+																						<li><a href="https://www.hondaindiapower.com/product-detail/umk450t-utnt">UMK450T UTNT</a></li>
+																						<li><a href="https://www.hondaindiapower.com/product-detail/umk450t-u2nt">UMK450T U2NT</a></li>
+																						<li><a href="https://www.hondaindiapower.com/product-detail/umk435t-u2nt">UMK435T U2NT</a></li>
+																						<li><a href="https://www.hondaindiapower.com/product-detail/umk435t-uent">UMK435T UENT</a></li>
+																						<li><a href="https://www.hondaindiapower.com/product-detail/umk425t-u2st">UMK425T U2ST</a></li>
+																					</ul>
+								
+																
+							</li>
+													<li>
+								<a href="https://www.hondaindiapower.com/product-category/water-pumps">Water Pumps</a>
+																		<ul>
+																						<li><a href="https://www.hondaindiapower.com/product-category/water-pumps#petrol-water-pumps" rel="relativeanchor" class="scroll">Petrol Water Pumps</a></li>
+																						<li><a href="https://www.hondaindiapower.com/product-category/water-pumps#diesel-water-pumps" rel="relativeanchor" class="scroll">Diesel Water Pumps</a></li>
+																					</ul>
+																
+							</li>
+													<li>
+								<a href="https://www.hondaindiapower.com/product-category/lawn-mowers">Lawn Mowers</a>
+																
+										<ul>
+																						<li><a href="https://www.hondaindiapower.com/product-detail/hrj216-k2">HRJ216 K2</a></li>
+																						<li><a href="https://www.hondaindiapower.com/product-detail/hrj196">HRJ196</a></li>
+																					</ul>
+								
+																
+							</li>
+													<li>
+								<a href="https://www.hondaindiapower.com/product-category/generators">Generators</a>
+																		<ul>
+																						<li><a href="https://www.hondaindiapower.com/product-category/generators#inverter-series" rel="relativeanchor" class="scroll">Inverter Series</a></li>
+																						<li><a href="https://www.hondaindiapower.com/product-category/generators#silent-series" rel="relativeanchor" class="scroll">Silent Series</a></li>
+																						<li><a href="https://www.hondaindiapower.com/product-category/generators#handy-series" rel="relativeanchor" class="scroll">Handy Series</a></li>
+																					</ul>
+																
+							</li>
+													<li>
+								<a href="https://www.hondaindiapower.com/product-category/general-purpose-engines">General Purpose Engines</a>
+																		<ul>
+																						<li><a href="https://www.hondaindiapower.com/product-category/general-purpose-engines#big-series" rel="relativeanchor" class="scroll">Big Series</a></li>
+																						<li><a href="https://www.hondaindiapower.com/product-category/general-purpose-engines#mid-series" rel="relativeanchor" class="scroll">Mid Series</a></li>
+																						<li><a href="https://www.hondaindiapower.com/product-category/general-purpose-engines#gxv-series" rel="relativeanchor" class="scroll">GXV Series</a></li>
+																						<li><a href="https://www.hondaindiapower.com/product-category/general-purpose-engines#micro-4" rel="relativeanchor" class="scroll">Micro 4</a></li>
+																					</ul>
+																
+							</li>
+													
+						</ul>
+					</li>
+					<li><a href="javascript: void(0)">Investors</a>
+						<ul>
+							<li><a href="https://www.hondaindiapower.com/financial">Financials</a></li>
+							<li><a href="https://www.hondaindiapower.com/stock-information">Stock Information</a></li>
+							<li><a href="https://www.hondaindiapower.com/meetings">Meetings</a></li>
+							<li><a href="https://www.hondaindiapower.com/dividend-iepf">Dividend and IEPF</a></li>
+							<li><a href="https://www.hondaindiapower.com/corporate-governance">Corporate Governance</a></li>
+							<li><a href="https://www.hondaindiapower.com/investor-service-request">Investor Service Request</a></li>
+							<li><a href="https://www.hondaindiapower.com/investors-contact">Investors Contact</a></li>
+							<li><a href="https://www.hondaindiapower.com/reports">Reports</a></li>
+														<li><a href="https://www.hondaindiapower.com/related-party-transactions">Related Party Transactions</a></li>
+						</ul>
+					</li>
+					<li><a href="https://www.hondaindiapower.com/exports">Exports</a></li>
+					<li><a href="https://www.hondaindiapower.com/careers">Careers</a></li>
+					<li><a href="javascript: void(0)">Customer Care</a>
+						<ul>
+							<!--<li><a href="https://www.hondaindiapower.com/maintenance-and-care-information">Maintenance &amp; Care Information</a></li>-->
+							<li><a href="https://www.hondappsv.com/IND/" target="_blank">Maintenance &amp; Care Information</a></li>
+							<li><a href="https://www.hondaindiapower.com/extended-warranty">Extended Warranty</a></li>
+							<li><a href="https://www.hondaindiapower.com/honda-genuine-oil">Honda Genuine Oil</a></li>
+							<li><a href="https://www.hondaindiapower.com/service-network">Service Network</a></li>
+							<li><a href="https://www.hondaindiapower.com/calculator">Model Calculator</a></li>
+						</ul>
+					</li>
+					<li><a href="https://www.hondaindiapower.com/contact-us">Contact Us</a></li>
+					<li><a href="https://www.hondaindiapower.com/online-payment">Online Payment</a></li>
+					<li><a href="https://www.hondaindiapower.com/press-release" >Press Release</a></li>
+				</ul>
+				<div class="head-social">
+					<span>Follow us</span>
+					<a href="https://www.facebook.com/hondapowerproductsindia/" target="_blank"><img src="https://www.hondaindiapower.com/front/media/fb-icon.png" alt=""></a>
+					<!-- <a href="#"><img src="https://www.hondaindiapower.com/front/media/twitter-icon.png" alt=""></a>
+					<a href="#"><img src="https://www.hondaindiapower.com/front/media/linkedin-icon.png" alt=""></a> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="header">
+	<div class="logo fl">
+		<a href="https://www.hondaindiapower.com/">
+			<img src="https://www.hondaindiapower.com/front/media/logo.png" alt="">
+		</a>
+	</div>
+	<div class="tgmenu"></div>
+	<div class="header-right fr">
+		<div class="fr">
+			<div class="head-social fl" >
+				<span>Follow us on</span>
+				<a href="https://www.facebook.com/hondapowerproductsindia/" target="_blank"><img src="https://www.hondaindiapower.com/honda/media/fb-icon.png" alt=""></a>
+				<!-- <a href="#"><img src="https://www.hondaindiapower.com/front/media/twitter-icon.png" alt=""></a>
+				<a href="#"><img src="https://www.hondaindiapower.com/front/media/linkedin-icon.png" alt=""></a> -->
+			</div>
+			<div class="header-search fl" style="padding-right: 10px">
+			<form method="get" id="frm-search" name="frm-search" action="https://www.hondaindiapower.com/search-results">
+				<input type="text" class="search" value="" name="site_search" id="site_search" onkeyup="return Remove('site_search');" placeholder="Search">
+				<div id="error_site_search" class="error"></div>
+				<button class="btn" id="btn-sitesearch" name="btn-sitesearch" type="submit"></button>
+			</form>
+			</div>
+
+			<div class="support-copy fl">
+				<a href="tel:1800112323"><img src="https://www.hondaindiapower.com/front/media/support-copy.png" alt="1800112323"></a>
+			</div>
+		</div>
+		
+		<div class="clr"></div>
+		<div class="nav">
+			<ul>
+				<li class="home"><a href="https://www.hondaindiapower.com/">Home</a></li>
+				<li class="submenu"><a href="https://www.hondaindiapower.com/about-us">About Us</a>
+					<ul>
+						<li><a href="https://www.hondaindiapower.com/why-buy-a-honda">Why Buy A Honda</a></li>
+					</ul>
+				</li>
+				<li class="submenu mega-menu"><a href="javascript:void(0)">Products</a>
+					<div class="product-mega-menu">
+						<div class="category-row">
+														<div class="in-box addone " data-index="tillers">
+								<a href="https://www.hondaindiapower.com/product-category/tillers"><img src="https://www.hondaindiapower.com/uploads/products/category/Att_02_FQ650.png" alt=""><span>Tillers</span></a>
+							</div>
+														<div class="in-box addone " data-index="brush-cutters">
+								<a href="https://www.hondaindiapower.com/product-category/brush-cutters"><img src="https://www.hondaindiapower.com/uploads/products/category/menu-backpack-sprayer1.png" alt=""><span>Brush Cutters</span></a>
+							</div>
+														<div class="in-box addone " data-index="water-pumps">
+								<a href="https://www.hondaindiapower.com/product-category/water-pumps"><img src="https://www.hondaindiapower.com/uploads/products/category/Water-Pump-Sets.jpg" alt=""><span>Water Pumps</span></a>
+							</div>
+														<div class="in-box addone " data-index="lawn-mowers">
+								<a href="https://www.hondaindiapower.com/product-category/lawn-mowers"><img src="https://www.hondaindiapower.com/uploads/products/category/Lawn_Mower.jpg" alt=""><span>Lawn Mowers</span></a>
+							</div>
+														<div class="in-box addone " data-index="generators">
+								<a href="https://www.hondaindiapower.com/product-category/generators"><img src="https://www.hondaindiapower.com/uploads/products/category/generator.jpg" alt=""><span>Generators</span></a>
+							</div>
+														<div class="in-box addone " data-index="general-purpose-engines">
+								<a href="https://www.hondaindiapower.com/product-category/general-purpose-engines"><img src="https://www.hondaindiapower.com/uploads/products/category/menu-engines.jpg" alt=""><span>General Purpose Engines</span></a>
+							</div>
+														
+						</div>
+												<div class="category-row level02 main-child-tillers" id="tillers">
+						<div class="category-sub-row">
+													<div class="in-box">
+								<a href="https://www.hondaindiapower.com/product-detail/f300">
+									<img src="https://www.hondaindiapower.com/uploads/products/5/tillers.png" alt="Tiller"><span>F300</span>
+								</a>
+							</div>	
+														<div class="in-box">
+								<a href="https://www.hondaindiapower.com/product-detail/fj500">
+									<img src="https://www.hondaindiapower.com/uploads/products/5/fj500.jpg" alt="Tiller"><span>FJ500</span>
+								</a>
+							</div>	
+														<div class="in-box">
+								<a href="https://www.hondaindiapower.com/product-detail/fq650">
+									<img src="https://www.hondaindiapower.com/uploads/products/5/Att_02_FQ6501.png" alt="Tiller"><span>FQ650</span>
+								</a>
+							</div>	
+													</div>
+						</div>
+												<div class="category-row level02 main-child-brush-cutters" id="brush-cutters">
+						<div class="category-sub-row">
+													<div class="in-box">
+								<a href="https://www.hondaindiapower.com/product-detail/umr435t-l2st">
+									<img src="https://www.hondaindiapower.com/uploads/products/4/New-products-25-aug_217x217.png" alt="BRUSH CUTTER"><span> UMR435T L2ST</span>
+								</a>
+							</div>	
+														<div class="in-box">
+								<a href="https://www.hondaindiapower.com/product-detail/umr435t-ledt">
+									<img src="https://www.hondaindiapower.com/uploads/products/4/New-products-25-aug_217x2171.png" alt="BRUSH CUTTER"><span> UMR435T LEDT</span>
+								</a>
+							</div>	
+														<div class="in-box">
+								<a href="https://www.hondaindiapower.com/product-detail/umk450t-utnt">
+									<img src="https://www.hondaindiapower.com/uploads/products/4/UMK450T_UTNT.jpg" alt="BRUSH CUTTER"><span>UMK450T UTNT</span>
+								</a>
+							</div>	
+														<div class="in-box">
+								<a href="https://www.hondaindiapower.com/product-detail/umk450t-u2nt">
+									<img src="https://www.hondaindiapower.com/uploads/products/4/UMK450T_U2NT1.jpg" alt="BRUSH CUTTER"><span>UMK450T U2NT</span>
+								</a>
+							</div>	
+														<div class="in-box">
+								<a href="https://www.hondaindiapower.com/product-detail/umk435t-u2nt">
+									<img src="https://www.hondaindiapower.com/uploads/products/4/uedt.png" alt="BRUSH CUTTER"><span>UMK435T U2NT</span>
+								</a>
+							</div>	
+														<div class="in-box">
+								<a href="https://www.hondaindiapower.com/product-detail/umk435t-uent">
+									<img src="https://www.hondaindiapower.com/uploads/products/4/uedt.jpg" alt="BRUSH CUTTER"><span>UMK435T UENT</span>
+								</a>
+							</div>	
+														<div class="in-box">
+								<a href="https://www.hondaindiapower.com/product-detail/umk425t-u2st">
+									<img src="https://www.hondaindiapower.com/uploads/products/4/12.png" alt="BRUSH CUTTER"><span>UMK425T U2ST</span>
+								</a>
+							</div>	
+													</div>
+						</div>
+												<div class="category-row level02 main-child-water-pumps" id="water-pumps">
+						<div class="category-sub-row">
+													<div class="in-box">
+								
+								<a href="https://www.hondaindiapower.com/product-category/water-pumps#petrol-water-pumps" rel="relativeanchor" class="scroll" ><img src="https://www.hondaindiapower.com/uploads/products/sub-category/WB30X.png" alt=""><span>Petrol Water Pumps</span></a>
+							</div>
+														<div class="in-box">
+								
+								<a href="https://www.hondaindiapower.com/product-category/water-pumps#diesel-water-pumps" rel="relativeanchor" class="scroll" ><img src="https://www.hondaindiapower.com/uploads/products/sub-category/WV30D.png" alt=""><span>Diesel Water Pumps</span></a>
+							</div>
+													</div>
+						</div>
+												<div class="category-row level02 main-child-lawn-mowers" id="lawn-mowers">
+						<div class="category-sub-row">
+													<div class="in-box">
+								<a href="https://www.hondaindiapower.com/product-detail/hrj216-k2">
+									<img src="https://www.hondaindiapower.com/uploads/products/2/k2.jpg" alt="LAWN MOWER"><span>HRJ216 K2</span>
+								</a>
+							</div>	
+														<div class="in-box">
+								<a href="https://www.hondaindiapower.com/product-detail/hrj196">
+									<img src="https://www.hondaindiapower.com/uploads/products/2/12.jpg" alt="LAWN MOWER"><span>HRJ196</span>
+								</a>
+							</div>	
+													</div>
+						</div>
+												<div class="category-row level02 main-child-generators" id="generators">
+						<div class="category-sub-row">
+													<div class="in-box">
+								
+								<a href="https://www.hondaindiapower.com/product-category/generators#inverter-series" rel="relativeanchor" class="scroll" ><img src="https://www.hondaindiapower.com/uploads/products/sub-category/EU_30is.jpg" alt=""><span>Inverter Series</span></a>
+							</div>
+														<div class="in-box">
+								
+								<a href="https://www.hondaindiapower.com/product-category/generators#silent-series" rel="relativeanchor" class="scroll" ><img src="https://www.hondaindiapower.com/uploads/products/sub-category/EX2400S.jpg" alt=""><span>Silent Series</span></a>
+							</div>
+														<div class="in-box">
+								
+								<a href="https://www.hondaindiapower.com/product-category/generators#handy-series" rel="relativeanchor" class="scroll" ><img src="https://www.hondaindiapower.com/uploads/products/sub-category/EP_1000.jpg" alt=""><span>Handy Series</span></a>
+							</div>
+													</div>
+						</div>
+												<div class="category-row level02 main-child-general-purpose-engines" id="general-purpose-engines">
+						<div class="category-sub-row">
+													<div class="in-box">
+								
+								<a href="https://www.hondaindiapower.com/product-category/general-purpose-engines#big-series" rel="relativeanchor" class="scroll" ><img src="https://www.hondaindiapower.com/uploads/products/sub-category/big.jpg" alt=""><span>Big Series</span></a>
+							</div>
+														<div class="in-box">
+								
+								<a href="https://www.hondaindiapower.com/product-category/general-purpose-engines#mid-series" rel="relativeanchor" class="scroll" ><img src="https://www.hondaindiapower.com/uploads/products/sub-category/mid.jpg" alt=""><span>Mid Series</span></a>
+							</div>
+														<div class="in-box">
+								
+								<a href="https://www.hondaindiapower.com/product-category/general-purpose-engines#gxv-series" rel="relativeanchor" class="scroll" ><img src="https://www.hondaindiapower.com/uploads/products/sub-category/GXV160.jpg" alt=""><span>GXV Series</span></a>
+							</div>
+														<div class="in-box">
+								
+								<a href="https://www.hondaindiapower.com/product-category/general-purpose-engines#micro-4" rel="relativeanchor" class="scroll" ><img src="https://www.hondaindiapower.com/uploads/products/sub-category/3_29_2014_10_52_13_AMGX25.jpg" alt=""><span>Micro 4</span></a>
+							</div>
+													</div>
+						</div>
+											</div>
+				</li>
+				<li class="submenu"><a href="javascript: void(0)">Investors</a>
+					<ul>
+						<li><a href="https://www.hondaindiapower.com/financial">Financials</a></li>
+						<li><a href="https://www.hondaindiapower.com/stock-information">Stock Information</a></li>
+						<li><a href="https://www.hondaindiapower.com/meetings">Meetings</a></li>
+						<li><a href="https://www.hondaindiapower.com/dividend-iepf">Dividend and IEPF</a></li>
+						<li><a href="https://www.hondaindiapower.com/corporate-governance">Corporate Governance</a></li>
+						<li><a href="https://www.hondaindiapower.com/investor-service-request">Investor Service Request</a></li>
+						<li><a href="https://www.hondaindiapower.com/investors-contact">Investors Contact</a></li>
+						<li><a href="https://www.hondaindiapower.com/reports">Reports</a></li>
+												<li><a href="https://www.hondaindiapower.com/related-party-transactions">Related Party Transactions</a></li>
+					</ul>
+				</li>
+				<li><a href="https://www.hondaindiapower.com/exports">Exports</a></li>
+				<li><a href="https://www.hondaindiapower.com/careers">Careers</a></li>
+				<li class="submenu"><a href="javascript: void(0)">Customer Care</a>
+					<ul>
+						<!--<li><a href="https://www.hondaindiapower.com/maintenance-and-care-information">Maintenance &amp; Care Information</a></li>-->
+						<li><a href="https://www.hondappsv.com/IND/" target="_blank">Maintenance &amp; Care Information</a></li>
+						<li><a href="https://www.hondaindiapower.com/extended-warranty">Extended warranty</a></li>
+						<li><a href="https://www.hondaindiapower.com/honda-genuine-oil">Honda Genuine Oil</a></li>
+						<li><a href="https://www.hondaindiapower.com/service-network">Service Network</a></li>
+						<li><a href="https://www.hondaindiapower.com/calculator">Model Calculator</a></li>
+					</ul>
+					</li>
+				<li><a href="https://www.hondaindiapower.com/contact-us">Contact Us</a></li>
+				<li><a href="https://www.hondaindiapower.com/online-payment">Online Payment</a></li>
+				<li><a href="https://www.hondaindiapower.com/press-release">Press Release</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="clr"></div>
+</div>
+<div class="breadcrumb">
+	<div class="container">
+		<div class="row">
+			<div class="col-eq">
+				<a href="https://www.hondaindiapower.com/">Home</a> <span>Service Network</span>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="find-dealer">
+	<div class="container">
+		<div class="heading cm-title"><h3>Dealer <span>Network</span></h3>
+</div>
+		<div class="row">
+			<div class="col-eq">
+				<div class="form-area fl">
+					<h3 class="white">Find your <span>Nearest Dealer</span></h3>
+					<div class="dealer-form">
+						<form name="frm-dealer-location" id="frm-dealer-location" action="">
+							<div class="form-row">
+										<select name="map_product" id="map_product" class="selectbox white" onchange="return Remove('map_product');">
+											<option value="">Select Products</option>
+																						<option value="7">Generators</option>
+																						<option value="6">Water Pumps</option>
+																						<option value="5">Tillers</option>
+																						<option value="4">Brush Cutters</option>
+																						<option value="3">General Purpose Engines</option>
+																						<option value="2">Lawn Mowers</option>
+																					</select>
+										<div id="error_map_product" class="error"></div>
+							</div>
+							<div class="form-row">
+										<select name="state" id="state" class="selectbox white" onchange="return Remove('state');">
+											<option value="">Select State</option>
+																						<option value="ANDAMAN & NICOBAR">ANDAMAN & NICOBAR</option>
+																						<option value="ANDHRA PRADESH">ANDHRA PRADESH</option>
+																						<option value="ARUNACHAL PRADESH">ARUNACHAL PRADESH</option>
+																						<option value="ASSAM">ASSAM</option>
+																						<option value="BIHAR">BIHAR</option>
+																						<option value="CHANDIGARH">CHANDIGARH</option>
+																						<option value="CHHATTISGARH">CHHATTISGARH</option>
+																						<option value="DELHI">DELHI</option>
+																						<option value="GOA">GOA</option>
+																						<option value="GUJARAT">GUJARAT</option>
+																						<option value="HARYANA">HARYANA</option>
+																						<option value="HIMACHAL PRADESH">HIMACHAL PRADESH</option>
+																						<option value="J&K">J&K</option>
+																						<option value="JAMMU & KASHMIR">JAMMU & KASHMIR</option>
+																						<option value="JHARKHAND">JHARKHAND</option>
+																						<option value="KARNATAKA">KARNATAKA</option>
+																						<option value="KERALA">KERALA</option>
+																						<option value="LADAKH">LADAKH</option>
+																						<option value="MADHYA PRADESH">MADHYA PRADESH</option>
+																						<option value="MAHARASHTRA">MAHARASHTRA</option>
+																						<option value="MANIPUR">MANIPUR</option>
+																						<option value="MEGHALAYA">MEGHALAYA</option>
+																						<option value="MIZORAM">MIZORAM</option>
+																						<option value="NAGALAND">NAGALAND</option>
+																						<option value="ODISHA">ODISHA</option>
+																						<option value="PUDUCHERRY">PUDUCHERRY</option>
+																						<option value="PUNJAB">PUNJAB</option>
+																						<option value="RAJASTHAN">RAJASTHAN</option>
+																						<option value="TAMILNADU">TAMILNADU</option>
+																						<option value="TELANGANA">TELANGANA</option>
+																						<option value="TRIPURA">TRIPURA</option>
+																						<option value="UTTAR PRADESH">UTTAR PRADESH</option>
+																						<option value="UTTARAKHAND">UTTARAKHAND</option>
+																						<option value="WEST BENGAL">WEST BENGAL</option>
+																					</select>
+										<div id="error_state" class="error"></div>
+							</div>
+							<div class="form-row">
+										<select name="city" id="city" class="selectbox white" onchange="return Remove('city');">
+											<option value="">Select City</option>
+										</select>
+										<div id="error_city" class="error"></div>
+							</div>
+							<div class="form-row">
+								<div class="checkbox-dealer">
+									 <input type="radio" name="sales" id="sales" value="1" checked>
+                  <label for="sales">Sales</label>
+                  <input type="radio" name="sales" id="service" value="2" >
+                  <label for="service">Service</label>
+									 <!--<input type="radio" name="sales" id="demo" value="3">
+									<label for="demo">Demo</label>-->
+								</div>
+							</div>
+							<div class="form-row">
+																<button class="button-sb outline" id="btn-map-view">View List</button>
+							</div>
+						</form>
+					</div>	
+				</div>
+								<div class="clr"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="enquiry-popup dealer-locator-popup" id="dealer-locator-popup">
+	
+</div>
+<div class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-m fl">
+				<div class="footer-title">Company</div>
+				<ul>
+					<li><a href="https://www.hondaindiapower.com/about-us">About Us</a></li>
+					<li><a href="https://www.hondaindiapower.com/why-buy-a-honda">Why Buy A Honda</a></li>
+					<li><a href="https://www.hondaindiapower.com/careers">Careers</a></li>
+				<li><a href="https://www.hondaindiapower.com/exports">Exports</a></li>
+					<li><a href="https://www.hondaindiapower.com/contact-us">Contact Us</a></li>
+				</ul>
+			</div>
+			<div class="col-m fl">
+				<div class="footer-title">Products</div>
+				<ul>
+												<li>
+								<a href="https://www.hondaindiapower.com/product-category/tillers">Tillers</a>
+							
+							</li>
+													<li>
+								<a href="https://www.hondaindiapower.com/product-category/brush-cutters">Brush Cutters</a>
+							
+							</li>
+													<li>
+								<a href="https://www.hondaindiapower.com/product-category/water-pumps">Water Pumps</a>
+							
+							</li>
+													<li>
+								<a href="https://www.hondaindiapower.com/product-category/lawn-mowers">Lawn Mowers</a>
+							
+							</li>
+													<li>
+								<a href="https://www.hondaindiapower.com/product-category/generators">Generators</a>
+							
+							</li>
+													<li>
+								<a href="https://www.hondaindiapower.com/product-category/general-purpose-engines">General Purpose Engines</a>
+							
+							</li>
+										</ul>
+			</div>
+			<div class="col-m2 fl">
+				<div class="footer-title">Investors</div>
+				<ul>
+					<li><a href="https://www.hondaindiapower.com/financial">Financials</a></li>
+					<li><a href="https://www.hondaindiapower.com/stock-information">Stock Information</a></li>
+					<li><a href="https://www.hondaindiapower.com/meetings">Meetings</a></li>
+					<li><a href="https://www.hondaindiapower.com/dividend-iepf">Dividend and IEPF</a></li>
+					<li><a href="https://www.hondaindiapower.com/corporate-governance">Corporate Governance</a></li>
+					<li><a href="https://www.hondaindiapower.com/investors-contact">Investors Contact</a></li>
+					<li><a href="https://www.hondaindiapower.com/reports">Reports</a></li>
+									</ul>
+			</div>
+			<div class="col-m2 fl">
+				<div class="footer-title">CUSTOMER CARE</div>
+				<ul>
+					<!--<li><a href="https://www.hondaindiapower.com/maintenance-and-care-information">Maintenance &amp; Care Information</a></li>-->
+					<li><a href="https://www.hondappsv.com/IND/" target="_blank">Maintenance &amp; Care Information</a></li>
+					<li><a href="https://www.hondaindiapower.com/extended-warranty">Extended Warranty</a></li>
+					<li><a href="https://www.hondaindiapower.com/honda-genuine-oil">Honda Genuine Oil</a></li>
+					<li><a href="https://www.hondaindiapower.com/service-network">Service Network</a></li>
+					<li><a href="https://www.hondaindiapower.com/calculator">Model Calculator</a></li>
+				</ul>
+			</div>
+			<div class="col-m fl">
+				<!-- <div class="footer-title col-add">Follow us</div>
+				<div class="col-add2">
+					<div class="footer-social">
+						<a href="#"><img src="https://www.hondaindiapower.com/front/media/social-fb.png" alt=""></a>
+						<a href="#"><img src="https://www.hondaindiapower.com/front/media/social-tw.png" alt=""></a>
+						<a href="#"><img src="https://www.hondaindiapower.com/front/media/social-linkedin.png" alt=""></a>
+					</div> -->
+					<div class="toll-free-image">
+						<a href="tel:1800112323"><img src="https://www.hondaindiapower.com/front/media/support-copy.png" alt="1800112323"></a>
+					</div>
+
+					<div class="head-social fl">
+				<span>Follow us on</span>
+				<a href="https://www.facebook.com/hondapowerproductsindia/" target="_blank"><img src="https://www.hondaindiapower.com/honda/media/fb-icon-blue.png" alt=""></a>
+				
+			</div>
+
+					<div class="mobile-no">
+						<a href="tel:1800112323">1800112323</a>
+					</div>
+				</div>
+			</div>
+			<div class="clr"></div>
+		</div>
+	</div>
+</div>
+<div class="footer-bottom">
+	<div class="container">
+		<div class="row">
+			<div class="col-eq">
+				<div class="fl">
+					<div class="ft-pcl">
+						<span class="block">Copyright @ Honda India Power Products Ltd. (Formerly known as Honda Siel Power Products Ltd.), 2017, All Right Reserved</span>
+						<a href="https://www.hondaindiapower.com/privacy-policy">Privacy Policy</a>
+						<!--<span>|</span>
+						<a href="#">Terms of Use</a>-->
+					</div>
+				</div>
+				<div class="fr">Design by Grapes Digital</div>
+				<div class="clr"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- popup end-->
+
+<div class="cookies-strip">
+	
+	<div class="container">
+
+		<div class="left">
+			<div class="strip-logo"><img src="https://www.hondaindiapower.com/front/media/logo.png" alt=""></div>	
+			<p>	<span> We use cookies to improve your experience.</span>
+By navigating the site, you agree to our <a href="https://www.hondaindiapower.com/cookies-policy"> Cookie Policy </a>.</p>
+
+		</div>
+
+		<div class="cookie-button"><a href="javascript:void(0)" class="button-sb outline cookie-link" onclick="setCookie('HIPPCookieCheck',1,365);">Got it</a></div>
+
+	</div>	
+
+</div>
+
+<script type="text/javascript">
+
+         cookieChk = null;
+
+function getCookie(c_name) {
+  var i,x,y,ARRcookies=document.cookie.split(";");
+  for (i=0;i<ARRcookies.length;i++) {
+    x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+    y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+    x=x.replace(/^\s+|\s+$/g,"");
+    if (x==c_name) {
+      return unescape(y);
+    }
+  }
+}
+
+
+
+function setCookie(c_name,value,exdays) { 
+  var exdate=new Date();
+  exdate.setDate(exdate.getDate() + exdays);
+  var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString()) + "; path=/";
+  document.cookie=c_name + "=" + c_value;
+  $(".cookies-strip").fadeOut(200); 
+}
+
+function checkCookie() { 
+  var cookieName="HIPPCookieCheck";
+  cookieChk=getCookie(cookieName);
+  if (cookieChk!=null && cookieChk!="") { 
+      $(".cookies-strip").fadeOut(200); 
+  }  else {
+   $(".cookies-strip").fadeIn();
+  }
+}
+
+
+
+
+   $(document).ready(function(){   
+       setTimeout(function () {
+           $(".cookies-strip").fadeIn();
+        });
+       $(".closeCookie, .blue-btn1").click(function() {
+           $(".cookies-strip").fadeOut(200);
+       }); 
+   }); 
+</script>
+<!-- cookie Policy code-->
+</body>
+</html>
+<script>
+
+function Remove(id) {
+	jQuery('#'+id).removeClass('error');
+    jQuery('#error_'+id).html('');
+}
+jQuery(document).ready(function(){
+	initialize();
+	$("#btn-map").click(function() {	
+			
+			var sales = ''
+			var service = ''
+			var demo = ''
+			
+			if (document.getElementById('sales').checked) {
+				sales = 1
+			}
+			else {
+				sales = 0
+			}
+			if (document.getElementById('service').checked) {
+				service = 1
+			}
+			else {
+				service = 0
+			}
+			
+		
+		var map_product			= jQuery("#map_product").val();
+		var state				= jQuery("#state").val();
+		var city				= jQuery("#city").val();
+		
+		jQuery('#error_first_name').removeClass('error');
+		var error_msg =[];
+		var count =0 ;		
+		
+		if (map_product == "") {
+			//jQuery('#map_product').addClass('error');
+			jQuery('#error_map_product').html('Please select product.');
+			error_msg[count] ="map_product";
+			count++;
+		}
+		if (state == "") {
+			//jQuery('#state').addClass('error');
+			jQuery('#error_state').html('Please select state.');
+			error_msg[count] ="state";
+			count++;
+		}
+		if (city == "") {
+			//jQuery('#city').addClass('error');
+			jQuery('#error_city').html('Please select city.');
+			error_msg[count] ="city";
+			count++;
+		}
+		if(count>0){
+			jQuery('#'+error_msg[0]).focus();
+			return false;
+		}else{
+	
+			//var url ="https://www.hondaindiapower.com/dealer/map_json";
+			var url ="https://www.hondaindiapower.com/dealer/map_json_search?state="+state+'&city='+city+'&sales='+sales+'&service='+service;
+			
+			//echo url;
+			$.getJSON(url, function( data ) {
+                var lat = [];
+				var lng = [];
+				var title = [];
+				var address = [];
+					$.each( data, function( key, val ) {
+                        lat.push(val.lat);
+						lng.push(val.lng);  
+						title.push(val.title);  
+						address.push(val.address);  
+					});
+					
+					//alert(title);
+					var mapOptions = {
+						zoom: 10,
+						center: new google.maps.LatLng(lat[0],lng[0]),
+						mapTypeId: google.maps.MapTypeId.ROADMAP,
+						marker:true
+					};
+					var infoWindow = new google.maps.InfoWindow();
+					map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+					for(var i = 0; i < lat.length; i++) { 
+					
+					//console.log(title[i]);
+						var marker = new google.maps.Marker({
+							position: new google.maps.LatLng(lat[i],lng[i]),
+							map: map,
+							title:title[i],
+							address:address[i]
+						});  
+
+						
+						(function(marker, data) {
+
+							// Attaching a click event to the current marker
+							google.maps.event.addListener(marker, "click", function(e) {
+							infoWindow.setContent('<h1>'+this.title+'</h1>'+this.address);
+							infoWindow.open(map, marker);
+						});
+						})(marker, data);
+							
+						
+					} 
+			});
+	
+	
+	
+	
+		
+			return false;
+		}
+		});
+		
+		
+		$("#btn-map-view").click(function() {	
+			
+			var sales = ''
+			var service = ''
+			
+			if (document.getElementById('sales').checked) {
+				sales = 1
+			}
+			else {
+				sales = 0
+			}
+			if (document.getElementById('service').checked) {
+				service = 1
+			}
+			else {
+				service = 0
+			}
+			
+		
+		var map_product			= jQuery("#map_product").val();
+		var state				= jQuery("#state").val();
+		var city				= jQuery("#city").val();
+		
+		jQuery('#error_first_name').removeClass('error');
+		var error_msg =[];
+		var count =0 ;		
+		
+		if (map_product == "") {
+			//jQuery('#map_product').addClass('error');
+			jQuery('#error_map_product').html('Please select product.');
+			error_msg[count] ="map_product";
+			count++;
+		}
+		if (state == "") {
+			//jQuery('#state').addClass('error');
+			jQuery('#error_state').html('Please select state.');
+			error_msg[count] ="state";
+			count++;
+		}
+		if (city == "") {
+			//jQuery('#city').addClass('error');
+			jQuery('#error_city').html('Please select city.');
+			error_msg[count] ="city";
+			count++;
+		}
+		if(count>0){
+			jQuery('#'+error_msg[0]).focus();
+			return false;
+		}else{
+	
+			jQuery.ajax({
+				type	: "POST",
+				url		: 'https://www.hondaindiapower.com/dealer/map_ajax_search?state='+state+'&city='+city+'&sales='+sales+'&service='+service,
+				success    : function(data){ //
+					$("body").addClass("overflow-hidden");
+					$('.dealer-locator-popup').fadeIn();
+					$('body').css({overflow: 'hidden'});
+					$('.side-fixed').css({right: '17px'});
+					$('#dealer-locator-popup').html(data);
+					
+				}
+			});
+		
+			return false;
+		}
+	});
+		
+		
+		
+		
+		$("#state").change(function() {	 
+		
+		var state 	    		= $("#state").val();
+	
+		jQuery.ajax({
+				beforeSend: function () {
+						
+						},
+				type	: "POST",
+				url		: 'https://www.hondaindiapower.com/dealer/get_cities',
+				data	: { state: state },
+				success: function (res) {
+							$("#city").html(res);
+						},
+				complete: function() {
+					
+				},
+			});
+			return false;
+		});
+	
+});
+
+</script>
+
+ <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFzIXq50zmrbW1-eneLcMVFGRNq9O6_58&callback=initMap" type="text/javascript"></script>-->
+
+    <script type="text/javascript">
+
+        var map;
+        function initialize() {
+	 
+	 //alert( position.coords.latitude);
+	 
+	/*	if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(function (position) {
+					initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+					map.setCenter(initialLocation);
+				});
+		} */
+		
+		
+		
+	 
+	 
+	 
+			// var url ="http://localhost/honda_latest/dealer/map_json";
+			var url ="https://www.hondaindiapower.com/dealer/map_json";
+			
+			//echo url;
+			$.getJSON(url, function( data ) {
+                var lat = [];
+				var lng = [];
+				var title = [];
+				var address = [];
+					$.each( data, function( key, val ) {
+                        lat.push(val.lat);
+						lng.push(val.lng);  
+						title.push(val.title);  
+						address.push(val.address);  
+					});
+					
+					//alert(title);
+					var mapOptions = {
+						zoom: 10,
+						center: new google.maps.LatLng(lat[0],lng[0]),
+						mapTypeId: google.maps.MapTypeId.ROADMAP,
+						marker:true
+					};
+					var infoWindow = new google.maps.InfoWindow();
+					map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+					for(var i = 0; i < lat.length; i++) { 
+					
+					//console.log(title[i]);
+					//var ttle = title[i];
+					//var adr = address[i];
+						var marker = new google.maps.Marker({
+							position: new google.maps.LatLng(lat[i],lng[i]),
+							map: map,
+							title:title[i],
+							address:address[i]
+						});  
+
+						
+						(function(marker, data) {
+
+							// Attaching a click event to the current marker
+							google.maps.event.addListener(marker, "click", function(e) {
+							infoWindow.setContent('<h1>'+this.title+'</h1>'+this.address);
+							infoWindow.open(map, marker);
+						});
+						})(marker, data);
+							
+						
+					}
+
+
+					 if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        const pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        infoWindow.setPosition(pos);
+        //infoWindow.setContent("Location found.");
+        //infoWindow.open(map);
+        map.setCenter(pos);
+      },
+      () => {
+        handleLocationError(true, infoWindow, map.getCenter());
+      }
+    );
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
+
+   
+			});
+			
+			
+};
+    </script>
