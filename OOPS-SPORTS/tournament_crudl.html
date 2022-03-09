@@ -10,6 +10,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <style type="text/css">
+    .card
+    {
+      background-color: cadetblue; 
+    }
+    form
+    {
+        border: cadetblue;
+    }
+    label,input,h6
+    
+    {
+        font-weight: bold;
+    }
+    </style>
     <script>
    
         var t1=new tournament("T001","BADMINTON TOURNAMENT","BADMINTON","JUNIORS","5-4-2022","ACERS BADMINTON COURT-chennai",1500,"31-3-2022",25000,0,"WINNERS")
@@ -26,15 +41,15 @@
     
     
 </head>
-<body >
- <div class="container row justify content-center">
+<body>
+ <div class=" card container row justify content-center" style="width:35rem;">
         <div class="row justify content-center">
-            <h6>TOURNAMENT FORM</h6>
+            <h6 class="text-center">TOURNAMENT FORM</h6>
         </div>
-         <form action="#" name="tourform" onsubmit="return tourperform()">
-            <div class="form group">
+         <form action="#" name="tourform" onsubmit="return tourperform()"> 
+            <div class="form group col-5" >
                 <label for="tourid">TOURNAMENT ID <span id="iderror"></span></label>
-                <input type="text" name="tourid" placeholder="enter tournament id" class="form-control">
+                <input type="text" name="tourid" placeholder="enter tournament id"  class="form-control">
     
             </div>
             <div class="form group">
@@ -94,8 +109,8 @@
                 </select>
             </div>
             <div>      
-                <input type="submit" class="btn btn-primary" value="SUBMIT">
-                <input type ="reset" class="btn btn-primary" value="RESET">
+                <input type="submit" class="btn btn-secondary" value="SUBMIT">
+                <input type ="reset" class="btn btn-secondary" value="RESET">
             </div>
     
          </form>
