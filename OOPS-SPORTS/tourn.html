@@ -9,222 +9,139 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    
+    <script src="..//OOPS-SPORTS/tourn.js"></script>
     <style type="text/css">
-        
         body
-            {
-                background-image:url();  
-                background-color: cadetblue;        
-                height:100vh;
-                background-size: cover;
-                background-position: center;
-            }
-        p
-          { 
-              font-style:normal;
-            font-weight: bold;
-              color: black;
-          }
-    
-    .fancy
-    {
-        position: relative;
-    }      
-    .fancy ::after
-    { content: '';
-      position:absolute;
-      background: red;
-      transform-origin: left;
-      
-        
-    }
-    .fancy:hover ::after{
-      width: 100%;
-      height: 2px;
-      transform: scaleX(3);
-      transition: transform 250ms;
-      top: 0;
-      bottom: 0;
-      cursor: pointer;
-      
-    
-    }
-    
-    .card-title
-    {
-        position: relative;
-        z-index: 1;
-      
-    }
-    .card-title::after
-    {   content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-        background: yellowgreen;
-      left:0;
-        z-index: -1;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 250ms ease-in;
-        
-    
-    }   
-    .card-title:hover::after
-    {
-        transform: scaleX(1);
-    
-    }
-    
+        {
+            background-image:linear-gradient(rgba(0,0,0.7),rgba(0,0,0,0.5)), url("sports/back.jfif");
+            height: 100vh;
+            background-size: contain;
+            background-position: center;
 
-     .card-bod
-    {
-       position: relative;
-       z-index: 1;
-     
-    
-    }
-    .card-bod::after
-    { content: "";
-       position: absolute;
-       top: 0;
-       bottom: 0;
-       left: 0;
-       width: 100%;
-       background: aquamarine;
-       z-index: -1;
-       transform: scalex(1) ;
-       transform-origin: right;
-       transition: transform 250ms ease-in;
-      
-    }
-    .card-bod:hover::after
-    {
-        transform: scalex(0);
-    }
-    
-       .head-label
-       {      position: relative;
-           z-index: 1;
-       }
-       .head-label::after
-       {   content: "" ;
-           position:  absolute;
-           background:yellow;
-           z-index: -1;
-           top: 0;
-           bottom: 0;
-           left: 0;
-           width: 100%;
-           transform: scaleX(1);
-           transition: transform 250ms ease-in;
-       }
-       .head-label:hover::after
-       {
-           transform: scaleX(0);
-       }
-    
-    
-    
-    </style>    
+        }
+      label
+      {
+         font-weight: bolder;
+         font-size: medium;
+         font-style: italic;
+       
+      }
+      .card,#template
+      {
+          background-color: cadetblue;
+         
+      }
+
+    </style>
 </head>
-    <body>
- 
-            <div class="d-flex row justify-content-around">
-                <div>
-                <h5 class="text-center">Tournaments</h5>
+<body class="continer row justify content-center">
+ <div class="card container " style="width: 55rem;">
+    <form action="">
+        <div class="row justify content-center">
+            <h5 class="text-center mt-2"><B>TOURNAMENT FORM</B></h5>
+        </div>
+         
+        <div class="form group mt-3">
+                <label for="tourid" class="col-4 mb-2">TOURNAMENT ID </label>
+                <input type="text"   id="tourid" placeholder="enter tournament id" class="form-inline col-7 mb-2" >
+    
             </div>
-                <nav class="navbar navbar-light bg-dark">
-                    <div class="container-fluid">
-                      <form class="d-flex ">
-                      
-                        <input class="form-control me-2 col-9 width=40px" type="search" placeholder="search for Tournaments" aria-label="Search">
-                        <button class="btn btn-outline-warning col-3" type="submit">Search</button>
-                   
-                      </form>
-                    </div>
-                  </nav>
+            <div class="form group">
+                <label for="tourname" class="col-4 mb-2">TOURNAMENT NAME </label>
+                <input type="text" name="tournam" id="tournam" placeholder="enter tournament name" class="form-inline col-7 mb-2" >
+            </div>
+            <div class="form group">
+                <label for="games" class="col-4 mb-2">SELECT NAME OF THE SPORTS</label>
+                <input type="text" id="gamenam" class="form-inline col-7 mb-2" placeholder="Enter sports of ur choice"> 
+                <!-- 
+                <select name="gamenam" id="gamenam" class="form-inline col-7">
+                 <option value="">---select---</option>
+                 <option value="badminton">FOOTBALL</option>
+                 <option value="tennis">TENNIS</option>
+                 <option value="squash">SQUASH</option>-->
+                </select> 
+            </div>
+            <div class="form group">
+                <label for="category" class="col-4 mb-2">CATEGORY</label>
+                <input type="text" id="category" placeholder="Enter the categogy (juniors/seniors/sub-juniors)"  class="form-inline col-7 mb-2">
+                <!-- 
+                <input type="radio" name="category" id="category" value="juniors"/>JUNIORS
+                <input type="radio" name="category" id="category" value="sub-juniors"/>SUB-JUNIORS
+                <input type="radio" name="category" id="category" value="seniors"/>SENIORS -->
+            </div>
+            <div class="form group">
+                <label for="tourdate" class="col-4 mb-2">TOURNAMENT DATE</label>
+                <input type="text" name="tourdob" id="tourdob" class="form-inline col-7 mb-2" placeholder="Enter Tournament conducting date dd-mm-yyyy">
+            </div>
+            <div class="form group">
+                <label for="venue" class="col-4 mb-2">VENUE</label>
+                <input type="text" id="venue" class="form-inline col-7 mb-2" placeholder="Enter Stadium,place">
+                <!-- 
+                <select name="venue" id="venue" class="form-control">
+                    <option value="">---select---</option>
+                 <option value="">JAWAHARLAL STADIUM,Chennai </option>
+                 <option value="">ELLIS SQUASH COURT,coimbatore</option>
+                 <option value="">ACERS BADMINTON COURT,chennai</option>
+                 <option value="">IIT TENNIS COURT,Madurai</option>
+                </select> -->
+            </div>
+            <div class="form group">
+                <label for="regfee" class="col-4 mb-2">REGISTRATION FEE</label>
+                <input type="text" id="regfee" class="form-inline col-7 mb-2" placeholder="Enter in INR ">
+                <!-- 
+                <select name="regfee" id="regfee" class="form-control">
+                    <option value="">---select---</option>
+                    <option value="">1200</option>
+                    <option value="">1500</option>
+                    <option value="">1800</option>
+                </select> -->
+            </div>
+            <div class="form group">
+                <label for="lregdate" class="col-4 mb-2">LAST DATE OF REGISTRATION</label>
+                <input type="text" name="lregdate" id="lregdate" class="form-inline col-7 mb-2" placeholder="Enter last Date of Registration dd-mm-yyyy ">
+            </div>
+            <div class="form group">
+                <label for="awards" class="col-4 mb-2">AWARDS</label>
+                <input type="text" id="awards" class="form-inline col-7 mb-2" placeholder="Enter in INR">
+                <!-- 
+                    <select name="awards" id="awards" class="form-control">
+                    <option value="">2000</option>   
+                    <option value="">5000</option>   
+                    <option value="">12000</option>   
+                    <option value="">15000</option>   
+                    
+                </select> -->
 
-                  <div class="container-fluid mt-4">
-                    <p class="head-label col-12 text-center  "  style="height: 70px; background-color:yellowgreen;"><font size="5","italics"><b>   DON'T SETTLE FOR GOOD <br/> STRIVE FOR EXCELLENCE</b> </font></p>
-                </div>
-                
-                <div class="row justify justify-content-around">
-                    <img src="..//OOPS-SPORTS/sports/head.jpg" alt=""  class="col-6"> 
-                    <a class="btn btn-warning align-self-center col-3" href="..//OOPS-SPORTS/tournament_crudl.html" role="button">GET STARTED</a>
-                    <!-- 
-                    <button class="btn btn-warning align-self-center col-3"><b>GET STARTED</b> </button> -->
-                </div>
-                
-                <div class=" row justify-content-around">
-                    <div class="col-2 ms-3">
-                            <p><b> FOOTBALL</b></p>
-                            <P class="fancy"><b>BASEBALL</b></P>
-                            <P><b>VOLLEYBALL</b></P>
-                    </div>
-                    <div class="col-2 ms-0">
-                            <p><b>CRICKET</b></p>
-                            <P><b>HOCKEY</b></P>
-                            <P ><b>BASKETBALL</b></P>
-                    </div>
-                    <div class="col-2">
-                            <p><b>SQUASH</b></p>
-                            <P><b>TENNIS</b></P>
-                            <P><b>BADMINTON</b></P>
-                    </div>
-                         
-                        <div class= "col-5 card rounded-3 ms-0 mt-0" style="width: 22rem;background-color:black;">
-                            <div class="card-body">
-                                <p class="card-title mt-1 text-center"> <font  size="3"> <b style="color: white;"> Sports,in your Inbox !</b></font></p>
-                                <p class="card-body mt-0 "><font  size="2"> <b style="color: white;">Sports new,No matter the season.Stop by for the Scores,Stay for the Stories</b> </font> </p>
-                                <input type="text" placeholder="Email address">
-                            </div>
-                        </div>       
-                </div>
-        
-
-
-
-
-
-
-
-
-
-                  <div class="col-3">
-                  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="..//OOPS-SPORTS/sports/tour1.caro.jfif" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="..//OOPS-SPORTS/sports/tour2.caro.jfif" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="..//OOPS-SPORTS/sports/sport1.jfif" class="d-block w-100" alt="...">
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-                </div>
-
-                <button type="button" class="btn btn-warning col-2">Previous Week</button>
-                <button type="button" class="btn btn-secondary  col-2">This Week</button>
-                <button type="button" class="btn btn-warning  col-2">Next Week</button>
-                <button type="button" class="btn btn-secondary col-2 ">Entry open</button>
-                <button type="button" class="btn btn-warning  col-2">Advanced Search</button>
+            </div>
+            <div class="row justify content-center">
+                <span class="col-3"></span>  
+                <input type="button" class=" col-2 btn btn-danger mt-3 mb-0" value="SUBMIT" onclick="creating()">
+                <span class="col-3"></span>
+                <input type ="button" class="col-2 btn btn-danger mt-3 mb-0" value="RESET" onclick="btnclear()">
+            </div>
+        </form>
+    </div>
+</div>
+           <!--  <div class="card row justify-content-center" style="width: 20rem;">
+               <input type="button" class=" btn btn-success" value="CREATE" onclick="creating()">-->
+           
+               <div class="row justify content-center">
+                <span class="col-3"></span>
+                <input type="button" class=" col-2 btn btn-warning" value="VIEW" onclick="viewing()">
+                <span class="col-2"></span>
+                <input type="button" class=" col-2 btn btn-secondary" value="SEARCH" onclick="searching()">  
             </div>
             
        
         
-    </body>
-    </html>
+   
+        <div  id="template" class="container col-10 row justify content-center ms-5 mt-2 me-0"></div>
+
+       
+<!-- 
+        <div class="card row justify-content-center" style="width: 20rem;">
+            <h5 class="ms-3">MENU</h5>
+            <div ><input type="button" class="col-5 btn btn-success" value="CREATE" onclick="creating()"></div>
+            <div ><input type="button" class="col-5 btn btn-warning" value="VIEW" onclick="viewing()"></div>
+            <div ><input type="button" class="col-5 btn btn-secondary" value="SEARCH" onclick="searching()"></div>        
+        </div> -->
